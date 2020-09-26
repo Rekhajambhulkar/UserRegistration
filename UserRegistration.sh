@@ -32,7 +32,7 @@ EmailPat="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA
 MobileNoPat="^([9]{1}[1][[:space:]]{1}|[0]{1})?[6-9]{1}[0-9]{9}$"
 
 #pattern for check Password has minimum 8 characters
-PasswordPat="^(?=.*?[A-Z])[a-zA-Z].{8,}$"
+PasswordPat="^(?=.*?[A-Z])(?=.*?[0-9])[a-zA-Z].{8,}$"
 
 #check all the conditions
 if [[ $Firstname =~ $FirstNamePat && $Lastname =~ $LastNamePat &&  $Email =~ $EmailPat && $MobileNo =~ $MobileNoPat && $Password =~ $PasswordPat]]
