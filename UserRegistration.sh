@@ -16,6 +16,9 @@ read Email
 echo "Enter valid Mobile Number:"
 read MobileNo
 
+echo "Enter password:"
+read password
+
 #Pattern for FirstName 
 FirstNamePat="^[[:upper:]]{1}[[:lower:]]{2,}$"
 
@@ -28,9 +31,23 @@ EmailPat="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA
 #pattern for MobileNo
 MobileNoPat="^([9]{1}[1][[:space:]]{1}|[0]{1})?[6-9]{1}[0-9]{9}$"
 
-if [[ $Firstname =~ $FirstNamePat && $Lastname =~ $LastNamePat &&  $Email =~ $EmailPat && $MobileNo =~ $MobileNoPat ]]
+#pattern for check Password has minimum 8 characters
+PasswordPat="^[a-zA-Z].{8,}$"
+
+#check all the conditions
+if [[ $Firstname =~ $FirstNamePat && $Lastname =~ $LastNamePat &&  $Email =~ $EmailPat && $MobileNo =~ $MobileNoPat && $Password =~ $PasswordPat]]
 then
         echo "yes"
 else
         echo "no"
 fi
+
+
+
+
+
+
+
+
+
+
