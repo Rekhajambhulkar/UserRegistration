@@ -34,15 +34,34 @@ MobileNoPat="^([9]{1}[1][[:space:]]{1}|[0]{1})?[6-9]{1}[0-9]{9}$"
 #pattern for check Password has minimum 8 characters
 PasswordPat="^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-][a-zA-Z].{8,}$"
 
-#check all the conditions
-if [[ $Firstname =~ $FirstNamePat && $Lastname =~ $LastNamePat &&  $Email =~ $EmailPat && $MobileNo =~ $MobileNoPat && $Password =~ $PasswordPat]]
+if [[ $Firstname =~ $FirstNamePat ]] && [[ $LastName =~ $LastNamePat ]]
 then
-        echo "yes"
+	echo "valid"
 else
-        echo "no"
+	echo "invalid"
 fi
 
+if [[ $MobileNo =~ $MobileNoPat ]]
+then
+	echo "valid"
+else
+	echo "invalid"
+fi
 
+#check all the conditions
+if [[ $Email =~ $EmailPat ]]
+then
+        echo "valid"
+else
+        echo "Invalid"
+fi
+
+if [[ $Password =~ $PasswordPat ]]
+then
+	echo "valid"
+else
+	echo "invalid"
+fi
 
 
 
